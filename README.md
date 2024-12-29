@@ -1,2 +1,2 @@
-# Ajaya-waiba
+ajaya.github.io
 thumbnail designer
