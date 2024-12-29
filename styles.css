@@ -1,0 +1,181 @@
+/* Global Styles */
+body {
+  background-color: #0d1b2a; /* Dark blue theme */
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+nav {
+  background-color: #1a2b3c;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+  color: #f0f0f0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Thumbnails Running Horizontally */
+.thumbnails {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px;
+  gap: 10px;
+  margin-top: 30px;
+  justify-content: start;
+}
+
+.thumbnail {
+  position: relative;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px 5px cyan;
+}
+
+/* Categories Section */
+.category-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.category {
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.category img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.category p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.category:hover {
+  box-shadow: 0 0 20px 5px cyan;
+  transform: scale(1.05);
+  background-color: #1a2b3c;
+}
+
+/* Category Thumbnails Section */
+.category-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  margin-top: 40px;
+  visibility: hidden; /* Hidden by default, will be shown when category is clicked */
+}
+
+.category-thumbnails img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Glow effect when hovering over the category section */
+.category:hover {
+  box-shadow: 0 0 15px 3px neon;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav h1 {
+      font-size: 1.8rem;
+  }
+
+  .thumbnails {
+      gap: 5px;
+  }
+
+  .category-section {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .category {
+      width: 150px;
+  }
+
+  .category p {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav h1 {
+      font-size: 1.5rem;
+  }
+
+  .thumbnails {
+      flex-direction: column;
+  }
+
+  .thumbnail {
+      width: 150px;
+      height: 150px;
+  }
+}
+/* Thumbnail item styling */
+.thumbnail-item {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px 3px cyan;
+}
+
+/* Category thumbnails section */
+.category-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  visibility: hidden; /* Hidden by default, will be shown when a category is clicked */
+}
+
+/* Thumbnail grid behavior */
+@media (max-width: 768px) {
+  .category-thumbnails {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
